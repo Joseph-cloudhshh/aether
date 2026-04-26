@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "functions": {
+    "api/chat.js":              { "maxDuration": 30 },
+    "api/saveConversation.js":  { "maxDuration": 10 },
+    "api/getConversations.js":  { "maxDuration": 10 }
+  },
+  "rewrites": [
+    { "source": "/api/chat",              "destination": "/api/chat.js" },
+    { "source": "/api/saveConversation",  "destination": "/api/saveConversation.js" },
+    { "source": "/api/getConversations",        "destination": "/api/getConversations.js" },
+    { "source": "/api/deleteAllConversations",  "destination": "/api/deleteAllConversations.js" },
+    { "source": "/(.*)",                  "destination": "/public/$1" }
+  ]
+}
